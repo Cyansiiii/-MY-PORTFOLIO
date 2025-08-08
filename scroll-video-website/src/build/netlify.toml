@@ -1,6 +1,18 @@
-[build]
-  publish = "scroll-video-website"
+# This file should be in the ROOT of your repository.
 
+[build]
+  # This tells Netlify to change into the 'scroll-video-website' directory
+  # before running any commands. This is where your package.json is.
+  base = "scroll-video-website"
+
+  # This is the command from your package.json to build the site.
+  command = "npm run build"
+
+  # After the build, Netlify will publish the files from this directory.
+  # Parcel creates a 'dist' folder.
+  publish = "dist"
+
+# This redirect rule is still important for single-page applications.
 [[redirects]]
   from = "/*"
   to = "/index.html"
